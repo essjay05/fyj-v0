@@ -1,0 +1,23 @@
+{
+  "name": "fyj-v0",
+  "version": "1.0.0",
+  "description": "Joy S. Portfolio",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "Joy S.",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.6",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.1"
+  }
+}
