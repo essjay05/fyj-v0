@@ -28,7 +28,8 @@ app.get('/api', (req, res) => {
 });
 
 // Require Routers
-
+const usersRouter = require('./routers/users');
+app.use('/api/users', usersRouter);
 
 // Listening on PORT
 app.listen(PORT, err => {
