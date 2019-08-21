@@ -4,29 +4,30 @@ const
     usersRouter = new express.Router(),
     usersCtrl = require('../controllers/users.js'),
     projectsCtrl = require('../controllers/projects.js');
-    // verifyToken = require('../serverAuth');
+    authenticate = require('../serverAuth');
 
 // USERS CRUD ROUTES
     // Non-protected Routes
     // Create
         usersRouter.post('/', usersCtrl.create);
     // Index
-        usersRouter.get('/', usersCtrl.index);
-    // Authenticate
-        // usersRouter.post('/authenticate', usersCtrl.authenticate);
-    // Verify Token
-        // usersRouter.use(verifyToken);
-    // PROTECTED ROUTES
-        // Show 1
-        usersRouter.get('/:id', usersCtrl.show);
-        // Edit/Update
-        usersRouter.patch('/:id', usersCtrl.update);
-        // Delete
-        usersRouter.delete('/:id', usersCtrl.destroy);
+    //     usersRouter.get('/', usersCtrl.index);
+    // // Authenticate
+    //     // usersRouter.post('/authenticate', usersCtrl.authenticate);
+    // // Verify Token
+    //     // usersRouter.use(verifyToken);
+    // // PROTECTED ROUTES
+    //     // Show 1
+    //     usersRouter.get('/:id', authenticate, usersCtrl.show);
+    //     // Edit/Update
+    //     usersRouter.patch('/:id', authenticate, usersCtrl.update);
+    //     // Delete
+    //     usersRouter.delete('/:id', authenticate, usersCtrl.destroy);
     
-    // PROJECTS CRUD ROUTES
-        // Create project
-        usersRouter.post('/:id/projects', projectsCtrl.create);
-        // Show all projects
-        usersRouter.get('/:id/projects', projectsCtrl.index);
+    // // PROJECTS CRUD ROUTES
+    //     // Create project
+    //     usersRouter.post('/:id/projects', authenticate, projectsCtrl.create);
+    //     // Show all projects
+    //     usersRouter.get('/:id/projects', authenticate, projectsCtrl.index);
         
+module.exports = usersRouter;
