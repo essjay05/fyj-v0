@@ -20,9 +20,9 @@ const
     //     // Show 1
         usersRouter.get('/:id', usersCtrl.show);
     //     // Edit/Update
-    //     usersRouter.patch('/:id', authenticate, usersCtrl.update);
+        usersRouter.patch('/:id', usersCtrl.update);
     //     // Delete
-    //     usersRouter.delete('/:id', authenticate, usersCtrl.destroy);
+        usersRouter.delete('/:id', usersCtrl.destroy);
     
     // // PROJECTS CRUD ROUTES
     //     // Create project

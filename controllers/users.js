@@ -46,8 +46,30 @@ module.exports = {
             res.status(400).send({ errorMsg: error });
         }
     
-    }
+    },
     // Patch User
-
+    update: ( req, res ) => {
+        console.log(`User to be updated: ${req.params.id}`)
+    
+        User.findById(req.params.id, ( err, updatedUser) => {
+            if (!req.body.password) delete req.body.password
+            Object.assign( updatedUser, req.body )
+            updatedUser.save(( err, updatedUser ) => {
+                if (err) res.json({ message: "ERROR", payload: null, code: err.code })
+                res.json({ message: "Successfully updated the user!", payload: updatedUser})
+            })
+        })
+    },
     // Delete User
+    destroy: async ( req, res ) => {
+        console.log(`Finding user id# ${req.params.id} to delete`);
+        try {
+            const foundUser = await User.findOneAndDelete({ _id: req.params.id });
+            const deletedUser = await foundUser.save();
+            res.status(200).send(`Successfully deleted: ${deletedUser}`);
+        } catch (err) {
+            res.status(400).send(err);
+            console.log(err);
+        }   
+    }
 }
