@@ -11,14 +11,14 @@ const
     // Create
         usersRouter.post('/', usersCtrl.create);
     // Index
-    //     usersRouter.get('/', usersCtrl.index);
+        usersRouter.get('/', usersCtrl.index);
     // // Authenticate
     //     // usersRouter.post('/authenticate', usersCtrl.authenticate);
     // // Verify Token
     //     // usersRouter.use(verifyToken);
     // // PROTECTED ROUTES
     //     // Show 1
-    //     usersRouter.get('/:id', authenticate, usersCtrl.show);
+        usersRouter.get('/:id', usersCtrl.show);
     //     // Edit/Update
     //     usersRouter.patch('/:id', authenticate, usersCtrl.update);
     //     // Delete
